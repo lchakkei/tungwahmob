@@ -1,24 +1,19 @@
 import UIKit
 
-//public enum Key: String {
-//    case firstTimeInstall = "firstTimeInstall"
-//    static let allValues = [firstTimeInstall]
-//}
-
 public struct KeychainHelper {
     
-    public static func verify() {
+    public static func verify(values: [String]) {
         if UserDefaults.standard.string(forKey: "firstTimeInstall") == nil {
             print("Delete All Key")
             UserDefaults.standard.set("false", forKey: "firstTimeInstall")
             UserDefaults.standard.synchronize()
-            KeychainHelper.clearAll()
+            KeychainHelper.clearAll(values)
         }
     }
     
-    public static func clearAll() {
-        for key in Key.allValues {
-            delete(forKey: key.rawValue)
+    public static func clearAll(_ values: [String]) {
+        for key in values {
+            delete(forKey: key)
         }
     }
     
