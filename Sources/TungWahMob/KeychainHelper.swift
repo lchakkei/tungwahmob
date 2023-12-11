@@ -1,15 +1,11 @@
 import UIKit
 
+//public enum Key: String {
+//    case firstTimeInstall = "firstTimeInstall"
+//    static let allValues = [firstTimeInstall]
+//}
+
 public struct KeychainHelper {
-    
-    public enum Key: String {
-        case token = "token"
-        case deviceId = "deviceId"
-        case username = "username"
-        case bioState = "BiometricsPolicyState"
-        
-        static let allValues = [token, deviceId, username, bioState]
-    }
     
     public static func verify() {
         if UserDefaults.standard.string(forKey: "firstTimeInstall") == nil {
@@ -80,4 +76,5 @@ public struct KeychainHelper {
         }
         return ()
     }
+    
 }
