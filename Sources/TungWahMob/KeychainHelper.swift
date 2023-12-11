@@ -1,4 +1,5 @@
 import UIKit
+// MARK: - Update
 
 public struct KeychainHelper {
     
@@ -11,7 +12,7 @@ public struct KeychainHelper {
         }
     }
     
-    public static func clearAll(_ values: [String]) {
+    private static func clearAll(_ values: [String]) {
         for key in values {
             delete(forKey: key)
         }
