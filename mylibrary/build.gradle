@@ -30,3 +30,16 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }
+
+afterEvaluate {
+    publishing {
+        publications {
+            libraryProject(MavenPublication) {
+                setGroupId 'com.github.lchakkei'
+                setArtifactId 'tungwahmob'
+                version '1.0.0'
+                artifact bundleReleaseAar
+            }
+        }
+    }
+}
