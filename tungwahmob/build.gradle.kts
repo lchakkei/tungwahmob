@@ -45,7 +45,7 @@ afterEvaluate {
                 run {
                     groupId = "com.github.lchakkei"
                     artifactId = "tungwahmob"
-                    version = "1.0.0"
+                    version = "android-SNAPSHOT"
                 }
             }
         }
