@@ -15,4 +15,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "App"
 include(":app")
-include(":app:tungwahmob")
+include(":tungwahmob")

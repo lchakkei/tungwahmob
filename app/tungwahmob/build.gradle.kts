@@ -1,19 +1,17 @@
 plugins {
-    id("com.android.application")
+    id("com.android.library")
+    id("maven-publish")
 }
 
 android {
-    namespace = "com.example.app"
+    namespace = "com.example.tungwahmob"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.app"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -32,12 +30,24 @@ android {
 }
 
 dependencies {
+
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation(project(mapOf("path" to ":tungwahmob")))
-
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("maven") {
+                run {
+                    groupId = "com.github.lchakkei"
+                    artifactId = "tungwahmob"
+                    version = "1.0.0"
+                }
+            }
+        }
+    }
 }
