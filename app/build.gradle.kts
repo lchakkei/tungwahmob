@@ -37,7 +37,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation(project(mapOf("path" to ":tungwahmob")))
 
-    implementation("com.github.lchakkei:tungwahmob:android-SNAPSHOT")
+    implementation("com.github.lchakkei:tungwahmob:develop-SNAPSHOT")
 
 
     testImplementation("junit:junit:4.13.2")
