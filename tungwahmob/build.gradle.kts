@@ -41,7 +41,7 @@ publishing {
     publications {
         create<MavenPublication>("maven") {
             run {
-                groupId = ""
+                groupId = "org.tungwah.itd"
                 artifactId = "library"
                 version = "1.0.0"
                 artifact("$buildDir/outputs/aar/1.0.0-release.aar")
